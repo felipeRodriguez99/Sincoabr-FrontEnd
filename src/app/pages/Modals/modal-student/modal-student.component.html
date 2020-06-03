@@ -1,0 +1,97 @@
+<div class="modal-header">
+    <span>{{ modalHeader }}</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form (ngSubmit)="updateStudent( ff )" #ff="ngForm" >
+<div class="modal-body">
+    <mat-card-content>
+            <div class="row show-grid">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name">Nombres</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="text" required class="form-control form-control-sm" id="name"
+                            placeholder="Digite nombres" [(ngModel)]="student.name" name="name">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="latName">Apellidos</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="text" required class="form-control form-control-sm" id="latName"
+                            placeholder="Digite apellidos" [(ngModel)]="student.latName" name="latName">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="email">Correo electronico</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="email" required class="form-control form-control-sm" id="email"
+                            placeholder="Digite correo electronico" [(ngModel)]="student.email" name="email">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="birthDate">Fecha de nacimiento</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="date" required class="form-control form-control-sm" id="birthDate"
+                            placeholder="Digite fecha de nacimiento" [(ngModel)]="student.birthDate"  name="birthDate">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="phone">Celular</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="text" required class="form-control form-control-sm" id="phone"
+                            placeholder="Digite celular" [(ngModel)]="student.phone" name="phone">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="address">Dirección</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="text" required class="form-control form-control-sm" id="address"
+                            placeholder="Digite dirección" [(ngModel)]="student.address" name="address">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="city">Ciudad</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="text" required class="form-control form-control-sm" id="city"
+                            placeholder="Digite ciudad" [(ngModel)]="student.city" name="city">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="attending">Nombre acudiente</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="text" required class="form-control form-control-sm" id="attending"
+                            placeholder="Digite nombre" [(ngModel)]="student.attending"  name="attending">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="attendingNumber">Celular acudiente</label>
+                        <!-- <span class="text-danger" *ngIf="f.submitted && f.controls['fechaFinal'].errors"> * </span> -->
+                        <input type="text" required class="form-control form-control-sm" id="attendingNumber"
+                            placeholder="Digite celular" [(ngModel)]="student.attendingNumber" name="attendingNumber">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row show-grid">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <button class="btn btn-primary  btn-block" type="submit"> Actualizar</button>
+                    </div>
+                </div>
+            </div> -->
+    </mat-card-content>
+</div>
+<div class="modal-footer">
+    <!-- <button class="btn btn-primary btn-lg" (click)="closeModal()">OK</button> -->
+    <button class="btn btn-primary btn-lg" type="submit"> Actualizar</button>
+</div>
+</form>

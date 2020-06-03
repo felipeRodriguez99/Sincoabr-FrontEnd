@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <span>{{ modalHeader }}</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form (ngSubmit)="createNote( ff )" #ff="ngForm" >
+<div class="modal-body">
+    <mat-card-content>
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="code">Cedula</label>                    
+                    <input type="text" required class="form-control form-control-sm" id="code"
+                        placeholder="Digite la cedula" [(ngModel)]="note.code"  name="code">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="subjectsId">Materia</label>
+                    <select class="form-control  form-control-sm" [(ngModel)]="note.subjectsId" name="subjectsId">
+                        <option [value]="seleccione">Seleccione Opción</option>
+                        <option *ngFor="let c of notes" [value]="c.subjectsId">{{c.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="note">Puntaje</label>                    
+                    <input type="text" required class="form-control form-control-sm" id="note"
+                        placeholder="Digite el puntaje" [(ngModel)]="note.note" name="note">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="periodId">Periodo</label>
+                    <select class="form-control  form-control-sm" [(ngModel)]="note.periodId" name="periodId">
+                        <option [value]="seleccione">Seleccione Opción</option>
+                        <option *ngFor="let c of periods" [value]="c.periodId">{{c.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</div>
+<div class="modal-footer">
+    <!-- <button class="btn btn-primary btn-lg" (click)="closeModal()">OK</button> -->
+    <button class="btn btn-primary btn-lg" type="submit">Crear</button>
+</div>
+</form>
+

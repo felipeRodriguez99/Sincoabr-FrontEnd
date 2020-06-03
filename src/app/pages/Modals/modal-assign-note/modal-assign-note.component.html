@@ -1,0 +1,52 @@
+<div class="modal-header">
+    <span>{{ modalHeader }}</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form (ngSubmit)="updateNote( ff )" #ff="ngForm" >
+<div class="modal-body">
+    <mat-card-content>
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="code">Cedula</label>                    
+                    <input type="text" required class="form-control form-control-sm" id="code"
+                        placeholder="Digite la cedula" [(ngModel)]="note.code"  name="code" readonly >
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="subjectsId">Materia</label>
+
+                    <input type="nameSubject" required class="form-control form-control-sm" id="nameSubject"
+                    placeholder="Digite la maeteria" [(ngModel)]="note.nameSubject"  name="nameSubject" readonly >
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="note">Puntaje</label>                    
+                    <input type="text" required class="form-control form-control-sm" id="note"
+                        placeholder="Digite el puntaje" [(ngModel)]="note.note" name="note">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="periodId">Periodo</label>
+                    <!-- <select class="form-control  form-control-sm" [(ngModel)]="note.periodId" name="periodId">
+                        <option [value]="seleccione">Seleccione Opción</option>
+                        <option *ngFor="let c of periods" [value]="c.periodId">{{c.name}}</option>
+                    </select> -->
+                    <input type="namePeriod" required class="form-control form-control-sm" id="namePeriod"
+                    placeholder="Digite la periodo" [(ngModel)]="note.namePeriod"  name="namePeriod" readonly >
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</div>
+<div class="modal-footer">
+    <!-- <button class="btn btn-primary btn-lg" (click)="closeModal()">OK</button> -->
+    <button class="btn btn-primary btn-lg" type="submit">Guardar</button>
+</div>
+</form>
+
